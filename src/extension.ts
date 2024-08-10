@@ -1,12 +1,14 @@
 import * as vscode from 'vscode';
+import * as path from 'path';
 
 export function activate(context: vscode.ExtensionContext) {
 	let disposable = vscode.commands.registerCommand('copy-filepath-and-line-number.run', () => {
 		const editor = vscode.window.activeTextEditor;
 		if (editor) {
-			const filePath = vscode.workspace.asRelativePath(editor.document.fileName);
+			const workspaceDir = path.dirname(editor.document.fileName);
+			const relativeFilePath = path.relative(workspaceDir, editor.document.fileName).replace(/\\/g, '/');
 			const lineNumber = editor.selection.active.line + 1;
-			const formattedString = `${filePath}#L${lineNumber}`;
+			const formattedString = `${relativeFilePath}#L${lineNumber}`;
 			vscode.env.clipboard.writeText(formattedString).then(() => {
 				vscode.window.showInformationMessage('Copied to clipboard: ' + formattedString);
 			});
