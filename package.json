@@ -2,7 +2,7 @@
 	"name": "copy-filepath-and-line-number",
 	"displayName": "copy-filepath-and-line-number",
 	"description": "Copies the filepath and line number formatted as '<filepath>#L<linenumber>'.",
-	"version": "0.0.3",
+	"version": "0.0.4",
 	"author": "Kazzarah Woods",
 	"publisher": "kazzarahw",
 	"engines": {
@@ -27,7 +27,8 @@
 		"watch": "tsc -watch -p ./",
 		"pretest": "npm run compile && npm run lint",
 		"lint": "eslint src --ext ts",
-		"test": "vscode-test"
+		"test": "vscode-test",
+		"package": "vsce package"
 	},
 	"devDependencies": {
 		"@types/mocha": "^10.0.7",
