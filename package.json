@@ -2,7 +2,7 @@
 	"name": "copy-filepath-and-line-number",
 	"displayName": "copy-filepath-and-line-number",
 	"description": "Copies the filepath and line number formatted as '<filepath>#L<linenumber>'.",
-	"version": "0.0.5",
+	"version": "0.0.6",
 	"author": "Kazzarah Woods",
 	"publisher": "kazzarahw",
 	"engines": {
