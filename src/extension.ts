@@ -5,11 +5,10 @@ export function activate(context: vscode.ExtensionContext) {
 	let disposable = vscode.commands.registerCommand('copy-filepath-and-line-number.run', () => {
 		const editor = vscode.window.activeTextEditor;
 		if (editor) {
-			const document = editor.document;
-			const selection = editor.selection;
-			const lineNumber = selection.active.line + 1; // Line numbers are 1-based
-			const filePath = document.uri.fsPath;
-			const workspaceFolder = vscode.workspace.getWorkspaceFolder(document.uri);
+			const lineNumber = editor.selection.active.line + 1;
+			const filePath = editor.document.uri.fsPath;
+			const workspaceFolders = vscode.workspace.workspaceFolders;
+			const workspaceFolder = workspaceFolders && workspaceFolders.length > 0 ? workspaceFolders[0] : undefined;
 
 			if (workspaceFolder) {
 				// Get the relative path

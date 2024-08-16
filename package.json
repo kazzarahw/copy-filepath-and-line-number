@@ -2,9 +2,10 @@
 	"name": "copy-filepath-and-line-number",
 	"displayName": "copy-filepath-and-line-number",
 	"description": "Copies the filepath and line number formatted as '<filepath>#L<linenumber>'.",
-	"version": "0.0.6",
+	"version": "0.0.7",
 	"author": "Kazzarah Woods",
 	"publisher": "kazzarahw",
+	"repository": {},
 	"engines": {
 		"vscode": "^1.92.0"
 	},
